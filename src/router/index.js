@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ResultView from '../views/ResultView.vue'
+import ResultCatView from '../views/ResultCatView.vue'
+import EnduranceResultView from '../views/EnduranceResultView.vue'
+import GroupeView from '../views/GroupeView.vue'
 
 Vue.use(VueRouter)
 
@@ -10,14 +14,30 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/result',
+    name: 'result',
+    component: ResultView
+  },
+
+  {
+    path: '/result-by-cat',
+    name: 'category',
+    component: ResultCatView
+  },
+
+  {
+    path: '/endurance',
+    name: 'endurance',
+    component: EnduranceResultView
+  },
+
+  {
+    path: '/groupe',
+    name: 'groupe',
+    component: GroupeView
+  },
 ]
 
 const router = new VueRouter({
