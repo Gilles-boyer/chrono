@@ -23,15 +23,16 @@
 </template>
 
 <script>
-import data from "../assets/data.json";
+import git from "../service/git"
 
 export default {
   mounted() {
-    this.init();
+      this.init();
   },
 
   data: () => ({
     list_pilotes : [],
+    data: null,
     bdd: [],
     headers: [
       {
@@ -46,9 +47,15 @@ export default {
 
   methods: {
     init() {
-      Object.assign(this.bdd, data);
-      this.createGroup();
+      //Object.assign(this.bdd, data);
+      git.getGroupe().then(res => {
+        this.bdd = res.data;
+        this.createGroup();
+      })
+     
     },
+
+    
 
     defineNbrGroup(nomb_voitures) {
       var nomb_groupe = 0;
@@ -73,7 +80,7 @@ export default {
     },
 
     createGroup() {
-      var nomb_voitures = data.length;
+      var nomb_voitures = this.bdd.length;
       var nomb_groupe = this.defineNbrGroup(nomb_voitures);
       var classement = [];
       var modulo = nomb_voitures % nomb_groupe

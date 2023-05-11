@@ -51,7 +51,7 @@
       >
       </v-img>
       <v-card-title class="justify-center font-weight-bold primary--text"
-        >Le 15 mai 2023 au Circuit Felix Guichard</v-card-title
+        >Le 14 mai 2023 au Circuit Felix Guichard</v-card-title
       >
       <v-card-subtitle class="pb-0 text-center">
         Profitez de votre chrono en direct</v-card-subtitle
