@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import data from "../assets/data.json"
+import git from "../service/git"
 
 export default {
   mounted() {
@@ -47,12 +47,12 @@ export default {
 
   methods: {
     init() {
-      Object.assign(this.bdd, data);
-      // git.getGroupe().then(res => {
-      //   this.bdd = res.data;
-      //   
-      // })
-      this.createGroup();
+      //Object.assign(this.bdd, data);
+      git.getGroupe().then(res => {
+        this.bdd = res.data.data;
+        this.createGroup();
+      })
+     
     },
 
     
